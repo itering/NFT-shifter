@@ -29,16 +29,6 @@ contract EncoderTemplate is Ownable {
             + (CHAIN_ID << 216) + (uint256(contractId) << 200) + (uint256(OBJECT_CLASS) << 192) + (CURRENT_LAND << 128) + uint256(_objectId);
     }
 
-    function encodeTokenIdAuth(address _tokenAddress, uint8 _objectClass, uint256 _producerId, uint128 _objectId) public view returns (uint256 _tokenId) {
-        uint16 contractId = ownershipAddress2Id[_tokenAddress];
-        require(ownershipAddress2Id[_tokenAddress] > 0, "Contract address does not exist");
-
-        _tokenId = (MAGIC_NUMBER << 248) + (CHAIN_ID << 240) + (uint256(contractId) << 224)
-        + (CHAIN_ID << 216) + (uint256(contractId) << 200) + (uint256(_objectClass) << 192) + (_producerId << 128) + uint256(_objectId);
-    }
-
-
-
     function registerNewOwnershipContract(address _nftAddress, uint8 _nftId) public onlyOwner {
         ownershipAddress2Id[_nftAddress] = _nftId;
         ownershipId2Address[_nftId] = _nftAddress;
