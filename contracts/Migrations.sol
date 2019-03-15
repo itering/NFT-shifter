@@ -1,4 +1,8 @@
-pragma solidity >=0.4.21 <0.6.0;
+pragma solidity ^0.4.23;
+
+import "@evolutionland/common/contracts/MintAndBurnAuthority.sol";
+import "@evolutionland/common/contracts/InterstellarEncoderV3.sol";
+
 
 contract Migrations {
   address public owner;
