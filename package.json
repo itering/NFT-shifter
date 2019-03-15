@@ -1,0 +1,29 @@
+{
+  "name": "@itering/NFT-shifter",
+  "version": "0.1.0",
+  "description": "Itering Object Issueing",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itering/NFT-shifter.git"
+  },
+  "keywords": [
+    "smart-contracts"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/itering/NFT-shifter/issues"
+  },
+  "homepage": "https://github.com/itering/NFT-shifter#readme",
+  "dependencies": {
+    "@evolutionland/common": "^1.7.5",
+    "openzeppelin-solidity": "^1.12.0"
+  }
+}
