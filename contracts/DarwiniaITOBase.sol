@@ -9,7 +9,7 @@ contract DarwiniaITOBase is DSAuth {
 
     uint8 public constant DARWINIA_OBJECT_ID = 254;  // Darwinia
 
-    uint16 public constant ITERING_PRODUCER_ID = 258;   // From Darwinia
+    uint16 public constant DARWINIA_PRODUCER_ID = 258;   // From Darwinia
 
     uint128 public nftCounter = 0;
 
