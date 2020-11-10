@@ -41,7 +41,7 @@ contract DarwiniaITOBase is DSAuth {
         // bytes32 public constant CONTRACT_INTERSTELLAR_ENCODER = "CONTRACT_INTERSTELLAR_ENCODER";
         // 0x434f4e54524143545f494e5445525354454c4c41525f454e434f444552000000
         uint256 tokenId = IInterstellarEncoderV3(registry.addressOf(0x434f4e54524143545f494e5445525354454c4c41525f454e434f444552000000)).encodeTokenIdForOuterObjectContract(
-            address(this), nftAddress, nftAddress, customizedTokenId, ITERING_PRODUCER_ID, 0);
+            address(this), nftAddress, nftAddress, customizedTokenId, DARWINIA_PRODUCER_ID, 0);
 
         IMintableNFT(nftAddress).mint(_user, tokenId);
 
