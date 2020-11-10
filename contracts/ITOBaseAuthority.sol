@@ -16,7 +16,8 @@ contract ITOBaseAuthority is DSAuth {
         address _src, address _dst, bytes4 _sig
     ) public view returns (bool) {
         return ( allowList[_src] && _sig == bytes4(keccak256("mintObject(address,uint256)")) ) ||
-        ( allowList[_src] && _sig == bytes4(keccak256("mintObject(address,uint256)")) );
+        ( allowList[_src] && _sig == bytes4(keccak256("mintObject(address,uint16,uint256)")) ) ||
+        ( allowList[_src] && _sig == bytes4(keccak256("burnObject(address,uint256)")) );
     }
 
     function addAllowAddress(address allowAddress) public onlyOwner{

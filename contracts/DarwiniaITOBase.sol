@@ -33,15 +33,15 @@ contract DarwiniaITOBase is DSAuth {
     }
 
 
-    function mintObject(address _user, uint256 _mark) public auth{
-        require(nftCounter < 340282366920938463463374607431768211455, "overflow");
-
+    function mintObject(address _user, uint16 grade, uint256 _mark) public auth{
+        require(nftCounter < 5192296858534827628530496329220095, "overflow");
         nftCounter += 1;
-
+        uint128 customizedTokenId = (uint128(grade) << 112) + nftCounter;
+       
         // bytes32 public constant CONTRACT_INTERSTELLAR_ENCODER = "CONTRACT_INTERSTELLAR_ENCODER";
         // 0x434f4e54524143545f494e5445525354454c4c41525f454e434f444552000000
         uint256 tokenId = IInterstellarEncoderV3(registry.addressOf(0x434f4e54524143545f494e5445525354454c4c41525f454e434f444552000000)).encodeTokenIdForOuterObjectContract(
-            address(this), nftAddress, nftAddress, nftCounter, ITERING_PRODUCER_ID, 0);
+            address(this), nftAddress, nftAddress, customizedTokenId, ITERING_PRODUCER_ID, 0);
 
         IMintableNFT(nftAddress).mint(_user, tokenId);
 
